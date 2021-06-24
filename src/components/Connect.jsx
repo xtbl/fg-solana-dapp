@@ -14,10 +14,14 @@ const Connect = () => {
 
   const getConnection = () => {
     const url = getNodeRpcURL();
-    
     // Create a connection
+    const connection = new Connection(url);
     // Get the API version
     // and save it to the component's state
+    connection.getVersion().then(apiVersion => {
+      setVersion(apiVersion);
+    })
+    .catch(error => console.log(error));
   }
 
   return (

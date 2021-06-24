@@ -7,11 +7,14 @@ const { Text, Paragraph } = Typography;
 const Account = ({ keypair, setKeypair }) => {
   const generateKeypair = () => {
     // Generate a Keypair
+    const newKeypair = Keypair.generate();
     // Save it to <App />'s state
+    setKeypair(newKeypair);
+    console.log(newKeypair);
   }
 
   // parse the address (as a string) from the keypair object
-  const publicKeyStr = "TBD";
+  const publicKeyStr = keypair && keypair.publicKey.toString();
 
   return (
     <Col>
