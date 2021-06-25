@@ -20,7 +20,6 @@ const Fund = () => {
         setIsFunded(true);
       })
     }).catch(error => console.log(error));
-    
     // On success, set isFunded to true
   }
 

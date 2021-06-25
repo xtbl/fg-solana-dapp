@@ -16,7 +16,12 @@ const Balance = () => {
     const connection = new Connection(url);
     
     // Create a PublicKey from the input value
+    const publicKey = new PublicKey(value.toString());
     // Call getBalance
+    connection.getBalance(publicKey).then(balanceResult => {
+
+      setBalance(balanceResult / DECIMAL_OFFSET);
+    });
     // Set balance using setBalance and DECIMAL_OFFSET
   }
 
